@@ -21,8 +21,8 @@ This repository contains case studies set in real-life Food production facility 
 
 ### Sample diagram
 ```mermaid
-flowchart TD
 
+flowchart TD
 A[Start] -> B[Check inventory]
 B -> C{Inventory Available?}
 C -> |Yes| D[Process Order]
