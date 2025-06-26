@@ -21,15 +21,14 @@ This repository contains case studies set in real-life Food production facility 
 
 ### Sample diagram
 ```mermaid
-
-graph TD;
-A -> B;
-B -> C;
-C -> D;
-C -> E;
-D -> F;
-E -> F;
-F -> G;
+flowchart TD;
+A-->B;
+B-->C;
+C-->D;
+C-->E;
+D-->F;
+E-->F;
+F-->G;
 ```
 
 ---
