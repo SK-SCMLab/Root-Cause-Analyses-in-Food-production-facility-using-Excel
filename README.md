@@ -25,8 +25,8 @@ flowchart TD
 
 A[Start] -> B[Check inventory]
 B -> C{Inventory Available?}
-C ->|Yes| D[Process Order]
-C ->|No| E[Request Reorder]
+C -> |Yes| D[Process Order]
+C -> |No| E[Request Reorder]
 D -> F[Ship Product]
 E -> F[Ship Product]
 F -> G[End]
