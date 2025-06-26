@@ -33,3 +33,13 @@ F-->G[End];
 
 ---
 
+## 📥 The 5 Whys Technique
+- Identify the problem and the problem statement
+- Arrange for a team brainstorming session
+- Explain the purpose
+- Analyze the problem and brainstorm backwards
+- Ask "Why?" for the answers obtained
+- *If a problem occurs, it is usually due to the process and not because of the person or team*
+
+---
+
