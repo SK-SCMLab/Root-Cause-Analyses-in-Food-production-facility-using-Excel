@@ -43,3 +43,18 @@ F-->G[End];
 
 ---
 
+## 👔 Case study: Cause & Effect (Fishbone/Ishikawa) diagram to handle issue in food production facility
+
+### Issue
+Frequent production halts in a packaged food line due to packaging defects
+
+### Fishbone categories
+- **Man**: Untrained staff, fatigue
+- **Machine**: Misaligned sealing machine, low maintenance
+- **Material**: Poor packaging quality, wrong bag size
+- **Method**: Ineffective SOP, poor inspection process
+- **Measurement**: No inline defect tracking, delay in feedback
+- **Environment**: High humidity, dust contamination
+
+
+
