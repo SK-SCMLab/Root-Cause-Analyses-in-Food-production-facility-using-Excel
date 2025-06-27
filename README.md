@@ -147,5 +147,7 @@ Frequent production halts in a packaged food line due to packaging defects
     MsgBox "Fishbone Diagram with subcategories created!", vbInformation
     End Sub    
 
+### Cause and Effect Matrix
+
             
 
