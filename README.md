@@ -8,7 +8,7 @@ In Improve phase,
 
     Evaluate --> Optimize --> Validate
 ```mermaid
-graph RC;
+graph TD;
 A[RCA] -->B[Unknown sources of variation];
 A -->C[Optimize the process];
 A -->D[Implement corrective action];
