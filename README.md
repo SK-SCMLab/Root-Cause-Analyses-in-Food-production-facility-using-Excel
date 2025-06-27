@@ -3,6 +3,19 @@ This repository contains case studies set in real-life Food production facility 
 
 ---
 
+## 🦺 Root Cause Analysis (RCA)
+In Improve phase, 
+
+    Evaluate --> Optimize --> Validate
+```mermaid
+flowchart RC;
+A[RCA] --> B[Unknown sources of variation];
+A[RCA] --> C[Optimize the process];
+A[RCA] --> D[Implement corrective action];
+```
+              
+---
+
 ## 🗝 Cause and Effect diagram
 - It is used to find the root cause and the potential solutions to the problem
 - It systematically helps a team break down a problem into several components
