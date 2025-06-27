@@ -8,10 +8,10 @@ In Improve phase,
 
     Evaluate --> Optimize --> Validate
 ```mermaid
-flowchart RC;
-A[RCA] --> B[Unknown sources of variation];
-A --> C[Optimize the process];
-A --> D[Implement corrective action];
+graph RC;
+A[RCA] -->B[Unknown sources of variation];
+A -->C[Optimize the process];
+A -->D[Implement corrective action];
 ```
               
 ---
