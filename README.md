@@ -10,8 +10,8 @@ In Improve phase,
 ```mermaid
 flowchart RC;
 A[RCA] --> B[Unknown sources of variation];
-A[RCA] --> C[Optimize the process];
-A[RCA] --> D[Implement corrective action];
+A --> C[Optimize the process];
+A --> D[Implement corrective action];
 ```
               
 ---
