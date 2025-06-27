@@ -70,9 +70,9 @@ Frequent production halts in a packaged food line due to packaging defects
 - **Measurement**: No inline defect tracking, delay in feedback
 - **Environment**: High humidity, dust contamination
 
-### VBA macro for Fishbone diagram
+### VBA macro for Fishbone diagram including sub-causes
 
-            Sub CreateFishboneDiagramWithSubcategories()
+    Sub CreateFishboneDiagramWithSubcategories()
     Dim ws As Worksheet
     Set ws = ActiveSheet
     
@@ -145,5 +145,7 @@ Frequent production halts in a packaged food line due to packaging defects
     ws.Shapes.AddTextbox(msoTextOrientationHorizontal, xEnd + 10, yCenter - 10, 200, 20).TextFrame.Characters.Text = "Problem: Packaging Defects"
     
     MsgBox "Fishbone Diagram with subcategories created!", vbInformation
-    End Sub
+    End Sub    
+
+            
 
