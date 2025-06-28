@@ -30,6 +30,7 @@ A -->D[Implement corrective action];
 4. Write the causes on the diagram under classification chosen
 
 ### Cause and effect matrix
+- C&E matrix helps quantify how much different root causes impact key business effects (like cost, downtime, or defects)
 - The prioritization number reflects the effect of each input variable on the output variable
 - The process output priority is multiplied with the input variables to arrive at the result for each input variable
 
@@ -147,7 +148,66 @@ Frequent production halts in a packaged food line due to packaging defects
     MsgBox "Fishbone Diagram with subcategories created!", vbInformation
     End Sub    
 
-### Cause and Effect Matrix
+### VBA macro code for CE Matrix
+
+    Sub GenerateCEMatrix()
+
+    Dim ws As Worksheet
+    Set ws = ActiveSheet
+    ws.Cells.Clear
+    
+    ' Setup headers
+    ws.Range("A1").Value = "Cause / Effect"
+    ws.Range("B1").Value = "Downtime"
+    ws.Range("C1").Value = "Defect rate"
+    ws.Range("D1").Value = "Cost impact"
+    ws.Range("E1").Value = "Total Score"
+    
+    ' Effect weights
+    ws.Range("B2").Value = 5 ' Downtime weight
+    ws.Range("C2").Value = 4 ' Defect rate weight
+    ws.Range("D2").Value = 3 ' Cost impact weight
+    
+    ' Example causes
+    ws.Range("A3").Value = "Machine misalignment"
+    ws.Range("A4").Value = "Training gap"
+    ws.Range("A5").Value = "Material Quality"
+    ws.Range("A6").Value = "No inspection"
+    
+    ' Placeholder for scores (user input)
+    ' ws.Range("B3:D6").Value = 3 ' default values replace manually
+    
+    ' Calculate weighted scores and totals
+    Dim i As Integer, j As Integer
+    For i = 3 To 6 ' Causes
+        For j = 2 To 4 ' Effects
+            ws.Cells(i, j).Value = 3 ' Default score (1-5 scale)
+        Next j
+    Next i
+        
+        ' Sum total score
+        ' ws.Cells(i, 5).Formula = "=SUM(B" & i & ":D" & i & ")"
+        For i = 3 To 6
+            ws.Cells(i, 5).Formula = "=B" & i & "*B2 + C" & i & "*C2+D" & i & "*D2"
+    Next i
+    
+    ' Formatting
+    ws.Range("A1:E1").Font.Bold = True
+    ws.Columns("A:E").AutoFit
+    
+    ' Add conditional formatting to total score
+    With ws.Range("E3:E6")
+            .FormatConditions.AddTop10
+            .FormatConditions(.FormatConditions.Count).SetFirstPriority
+            .FormatConditions(1).TopBottom = x1Top10Top
+            .FormatConditions(1).Rank = 1
+            .FormatConditions(1).Percent = False
+            .FormatConditions(1).Interior.Color = RGB(255, 230, 153) ' Light red
+    End With
+    
+    MsgBox "Cause & Effect matrix created. You can now modify the scores as needed!", vbInformation
+    End Sub
+
 
             
 
