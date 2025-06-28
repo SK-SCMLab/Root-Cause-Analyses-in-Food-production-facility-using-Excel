@@ -56,6 +56,13 @@ F-->G[End];
 - Ask "Why?" for the answers obtained
 - *If a problem occurs, it is usually due to the process and not because of the person or team*
 
+### Corrective action
+- A template for capturing customer delivery information
+- Eliminate erroneous product deliveries
+- Improve quality of service
+- Focus on process issues and not people
+- Stay within your teams control to change
+
 ---
 
 ## 👔 Case study: Cause & Effect (Fishbone/Ishikawa) diagram to handle issue in food production facility
