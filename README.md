@@ -215,6 +215,79 @@ Frequent production halts in a packaged food line due to packaging defects
     MsgBox "Cause & Effect matrix created. You can now modify the scores as needed!", vbInformation
     End Sub
 
+### VBA macro for 5 Whys technique and Corrective Action
 
-            
+        Sub Run5WhyswithCorrectiveAction()
+    Dim ws As Worksheet
+    Set ws = ActiveSheet
+    
+    ws.Cells.Clear
+    ws.Range("A1").Value = "5 Whys Analysis"
+    ws.Range("A1").Font.Bold = True
+    ws.Range("A1").Font.Size = 14
+    
+    Dim i As Integer
+    Dim currentWhy As String
+    Dim lastAnswer As String
+    Dim promptText As String
+    Dim correctiveAction As String
+    
+    
+    ' Ask for the problem statement
+    lastAnswer = InputBox("Enter the initial problem statement:", "5 Whys-Problem")
+    If lastAnswer = " " Then
+        MsgBox "Analysis cancelled.", vbExclamation
+        Exit Sub
+    End If
+    ws.Range("A3").Value = "Problem statement: "
+    ws.Range("B3").Value = lastAnswer
+    
+    ' Loop through 5 Whys questions
+    For i = 1 To 5
+        promptText = "Why " & i & ": Why did this happen?" & vbCrLf & "(Previous Answer: " & lastAnswer & ")"
+        currentWhy = InputBox(promptText, "5 Whys - Step " & i)
+        
+        If currentWhy = " " Then
+            MsgBox "Analysis cancelled at Why " & i, vbExclamation
+            Exit Sub
+        End If
+        
+        ws.Cells(i + 4, 1).Value = "Why " & i & "?"
+        ws.Cells(i + 4, 2).Value = currentWhy
+        lastAnswer = currentWhy
+    Next i
+    
+    ' Output final root cause
+    ws.Cells(10, 1).Value = "Root Cause:"
+    ws.Cells(10, 2).Value = lastAnswer
+    
+    ' Corrective action
+    correctiveAction = InputBox("Enter the corrective action to address the root cause:", "Corrective Action")
+    If correctiveAction = "" Then
+        MsgBox "No corrective action provided.", vbInformation
+    Else
+        ws.Cells(12, 1).Value = "Corrective Action: "
+        ws.Cells(12, 2).Value = correctiveAction
+    End If
+    
+    ws.Columns("A:B").AutoFit
+    
+    MsgBox "5 Whys Analysis completed and logged successfully!", vbInformation  
+    End Sub
+
+---
+
+## 👜 Excel functionalities used
+- Visual Basic Editor
+- Macros
+
+---
+
+## 🥼 Requirements
+- Microsoft Excel 2016 or later
+- Lean and Six sigma concepts
+
+---
+
+*"Six sigma is not a program - it's a philosophy of doing business"- Jack Welch*
 
